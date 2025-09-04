@@ -1,4 +1,4 @@
-module not(input a,output out );
+module notg(input a,output out );
 supply1 vdd;
 supply0 gnd;
   pmos p1(out,vdd,a);
