@@ -1,0 +1,9 @@
+module gates(input a,b , output c,d,e,f,g,h,i);
+not(c,a);
+or(d,a,b);
+xor(e,a,b);
+and(f,a,b);
+nand(g,a,b);
+nor(h,a,b);
+xnor(i,a,b);
+endmodule
