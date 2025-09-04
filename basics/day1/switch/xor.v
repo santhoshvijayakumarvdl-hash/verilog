@@ -1,4 +1,4 @@
-module xorswitch(input a,b , output out);
+module xorg(input a,b , output out);
 wire w1,w2,w3,w4,w5;
 supply1 vdd;
 supply0 gnd;
