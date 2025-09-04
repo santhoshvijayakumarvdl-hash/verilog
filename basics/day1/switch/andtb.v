@@ -1,7 +1,7 @@
 module andtb;
 reg a, b;
 wire c;
-and dut (.a(a), .b(b), .c(c));
+andg dut (.a(a), .b(b), .c(c));
 initial begin
 $monitor("time=%0t | a=%b b=%b => c=%b", $time, a, b, c);
   a=0; b=0; #10;
