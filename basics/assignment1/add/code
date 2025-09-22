@@ -1,0 +1,61 @@
+module add(a,b,gt,lt,eq);
+input [1:0] a,b;
+output gt,lt,eq;
+wire a1b,b1b,a0b,b0b,x,y,z,c,d,e,f,g,h,i;
+not(a1b,a[1]);
+not(a0b,a[0]);
+not(b1b,b[1]);
+not(b0b,b[0]);
+assign a1=a[1];
+assign b1=b[1];
+assign b0=b[0];
+assign a0=a[0];
+and(x,a1,a0,b0b);
+and(y,a0,b1b,b0b);
+and(z,a1,b1b);
+or(gt,x,y,z);
+and(c,a1b,a0b,b1b,b0b);
+and(d,a1b,a0,b1b,b0);
+and(e,a1,a0,b1,b0);
+and(f,a1,a0b,b1,b0b);
+or(eq,c,d,e,f);
+and(g,a1b,b1);
+and(h,a0b,b1,b0);
+and(i,a1b,a0b,b0);
+or(lt,g,h,i);
+endmodule
+
+
+//testbench
+`timescale 1ns/1ps
+
+module addtb;
+reg [1:0] a, b;
+wire gt, lt, eq;
+
+bitcomp uut (
+    .a(a),
+    .b(b),
+    .gt(gt),
+    .lt(lt),
+    .eq(eq)
+);
+
+initial begin
+    
+    a = 2'b00; b = 2'b11;
+    #5;
+    a = 2'b11; b = 2'b11;
+    #5;
+    a = 2'b11; b = 2'b10;
+    #5;
+    $finish;
+end
+
+initial begin
+    $monitor($time, " a=%b, b=%b, gt=%b, lt=%b, eq=%b", a, b, gt, lt, eq);           
+end
+endmodule
+
+
+
