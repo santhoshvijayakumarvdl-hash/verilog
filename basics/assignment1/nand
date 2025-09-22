@@ -1,0 +1,22 @@
+module nandu(
+    input A, B,
+    output Y
+);
+
+    supply1 Vdd;
+    supply0 Gnd;
+
+    wire w;
+
+    pmos (Y, Vdd, A);    
+    pmos (Y, w, B);    
+    nmos (Y, Gnd, A);    
+   nmos (Y, Gnd, B);   
+
+endmodule
+
+module nan(a,b,out);
+input a,b;
+output out;
+nand(out,a,b);
+endmodule
