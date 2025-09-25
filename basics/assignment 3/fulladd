@@ -1,0 +1,14 @@
+module desi(
+  input [3:0] a,b,
+  output [3:0] sum,
+  output carry
+       );	
+       wire c_in=0;
+       assign a=15;
+       assign b=15;
+   assign {carry,sum}=a+b+c_in;
+    initial begin
+    $monitor(" a=%b b=%b   %b %b  ",$realtime,a,b,sum,carry);
+    end
+    
+endmodule
