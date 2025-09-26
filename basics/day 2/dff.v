@@ -1,4 +1,4 @@
-module jjnn(input j,k,clk,
+module jjnn(input d,clk,
 output reg out
     );
     initial begin
