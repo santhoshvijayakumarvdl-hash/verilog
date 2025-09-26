@@ -10,6 +10,7 @@ output reg out
     1'b1:out<=out;
     endcase
     end
+    //testbench
       module tb;
 reg d,clk=0;
 wire out;
