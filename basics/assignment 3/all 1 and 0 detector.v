@@ -1,3 +1,4 @@
+//tr
 module desi(
   input [8:0] a,
   output  ep,op
